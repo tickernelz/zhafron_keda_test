@@ -1,0 +1,16 @@
+@startuml
+entity Material {
+  * Material Code : String
+  * Material Name : String
+  * Material Type : Enum {Fabric, Jeans, Cotton}
+  * Material Buy Price : Float
+  * Supplier ID : Integer
+}
+
+entity Supplier {
+  * Supplier ID : Integer
+  * Supplier Name : String
+}
+
+Material }o--|| Supplier : "Related Supplier"
+@enduml
