@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_zhafron_keda_test_zhafron_keda_test,zhafron_keda_test.zhafron_keda_test,model_zhafron_keda_test_zhafron_keda_test,base.group_user,1,1,1,1
