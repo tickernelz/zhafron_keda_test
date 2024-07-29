@@ -1,0 +1,63 @@
+<odoo>
+    <data>
+
+        <!-- Material Form View -->
+        <record id="view_material_form" model="ir.ui.view">
+            <field name="name">material.form</field>
+            <field name="model">keda.material</field>
+            <field name="arch" type="xml">
+                <form string="Material">
+                    <sheet>
+                        <group>
+                            <field name="material_code"/>
+                            <field name="name"/>
+                            <field name="material_type"/>
+                            <field name="material_buy_price"/>
+                            <field name="supplier_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Material Tree View -->
+        <record id="view_material_tree" model="ir.ui.view">
+            <field name="name">material.tree</field>
+            <field name="model">keda.material</field>
+            <field name="arch" type="xml">
+                <tree string="Material">
+                    <field name="material_code"/>
+                    <field name="name"/>
+                    <field name="material_type"/>
+                    <field name="material_buy_price"/>
+                    <field name="supplier_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_material_search" model="ir.ui.view">
+            <field name="name">keda.material.search</field>
+            <field name="model">keda.material</field>
+            <field name="arch" type="xml">
+                <search string="Materials">
+                    <field name="name"/>
+                    <field name="material_code"/>
+                    <filter name="Fabric Type" string="Fabric Type" domain="[('material_type', '=', 'fabric')]"/>
+                    <filter name="Jeans Type" string="Jeans Type" domain="[('material_type', '=', 'jeans')]"/>
+                    <filter name="Cotton Type" string="Cotton Type" domain="[('material_type', '=', 'cotton')]"/>
+                    <filter string="Material Type" name="material_type" domain="[]"
+                            context="{'group_by':'material_type'}"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Material Action -->
+        <record id="action_material" model="ir.actions.act_window">
+            <field name="name">Materials</field>
+            <field name="res_model">keda.material</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+    </data>
+</odoo>

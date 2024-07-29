@@ -1,0 +1,37 @@
+<odoo>
+    <data>
+        <!-- Supplier Form View -->
+        <record id="view_supplier_form" model="ir.ui.view">
+            <field name="name">supplier.form</field>
+            <field name="model">keda.supplier</field>
+            <field name="arch" type="xml">
+                <form string="Supplier">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Supplier Tree View -->
+        <record id="view_supplier_tree" model="ir.ui.view">
+            <field name="name">supplier.tree</field>
+            <field name="model">keda.supplier</field>
+            <field name="arch" type="xml">
+                <tree string="Supplier">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Supplier Action -->
+        <record id="action_supplier" model="ir.actions.act_window">
+            <field name="name">Suppliers</field>
+            <field name="res_model">keda.supplier</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>
